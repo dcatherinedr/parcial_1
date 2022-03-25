@@ -1,0 +1,255 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Parcial\#1},
+  pdfauthor={Diana Catherine Davila},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Parcial\#1}
+\author{Diana Catherine Davila}
+\date{2022-03-24}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  La tabla mostrada contiene valores de poblacion, en cientos de miles,
+  de las diez ciudades mas pobladas de cuatros paises en el año 1967:
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Construya un box-plot e identifique los puntos extremos ¿ Cuales son
+  las caracteristicas? ¿Hay outliers?
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{par}\NormalTok{(}\AttributeTok{mfrow=} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
+\CommentTok{\# Grafica bloxpot de argentina }
+\FunctionTok{boxplot}\NormalTok{(arg,  }\AttributeTok{col=}\StringTok{"blue"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Poblacion Argentina"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Poblacion"}\NormalTok{, }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{30}\NormalTok{),  }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{parcial1_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Grafica bloxport de USA}
+\FunctionTok{boxplot}\NormalTok{(eeuu,  }\AttributeTok{col=}\StringTok{"red"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Estados Unidos"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Poblacion"}\NormalTok{, }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{80}\NormalTok{),  }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{parcial1_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Grafica bloxpot de Holanda}
+\FunctionTok{boxplot}\NormalTok{(hol,  }\AttributeTok{col=}\StringTok{"yellow"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Poblacion Holanda"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Poblacion"}\NormalTok{, }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{10}\NormalTok{),  }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{parcial1_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Grafica bloxpot de Japón}
+\FunctionTok{boxplot}\NormalTok{(jap,  }\AttributeTok{col=}\StringTok{"purple"}\NormalTok{, }\AttributeTok{main =} \StringTok{"Poblacion Japon"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Poblacion"}\NormalTok{, }\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{115}\NormalTok{),  }\AttributeTok{horizontal =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{parcial1_files/figure-latex/unnamed-chunk-1-4.pdf} R/:
+Se puede observar que la grafica que corresponde a Japón, Estados Unidos
+y Argentina son los unicos que tiene datos atipicos, los cuales son para
+de 110.21(Japon), 77.81(Estados Unidos), 29.66(Argentina),
+adicionalmente la grafica de Argentina, Estados Unidos y Holanda tienen
+una simetria positiva y la grafica de Japon es la unica que tiene una
+simetria normal.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Compare los centros de cada población, sus dispersiones y su simetria.
+  ¿ Cuales son las caracteristicas más sobresalientes? ¿ Hay outliers?
+\end{enumerate}
+
+R/: la grafica de japon es la unica que tiene una simetria normal, los
+datos son centrados y solo tiene un outlier de 110,21
+
+la grafica de Argentina tiene una simetria positiva, su centro esta a
+25\%, tiene un solo dato atipico que es de 29.66
+
+La grafica de Holanda tiene una simetria positiva, es la que tiene la
+caja más grande este nos indica que tiene datos muy alejados su centro
+esta aproximadamente a un 30\% y no posee datos atipicos.
+
+La grafica de Estados Unidos tiene una simetria positiva, tiene su
+centro a un 35\%, tiene un dato atipico de 77.81
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Avianca se encuentra estudiando la situacion de venta de puesto en el
+  vuelo Armmenia - Bogota puesto que ha identificado que el 2\% de las
+  personas que reservaron puesto, no se presentan a la hora del
+  embarque. Teniendo en cuenta que el avion A320 utilizado en esta ruta
+  tiene una capacidad para 189 pasajeros, la empresa decide vender 181
+  tiquetes. ¿Cual es la probabilidad de que todas las personas que
+  llegan a embarque puedan tener su silla asegurada y no se presenten
+  quejar por ``sobre-vender'' sillas ante la aeronautica civil? Asuma
+  que las llegadas de los pasajerons siguen una distribucion Poisson.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lambda }\OtherTok{\textless{}{-}}\DecValTok{180} \SpecialCharTok{*} \FloatTok{0.98}
+\FunctionTok{ppois}\NormalTok{(}\DecValTok{180}\NormalTok{, }\AttributeTok{lambda =}\NormalTok{ lambda, }\AttributeTok{lower.tail =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6255245
+\end{verbatim}
+
+R/: La probabilidad de que todas las personas que llegan a embarque y
+puedan tener su silla asegurada y no presenten quejas por sobre-vender
+sillas ante la aeronautica civil es de aproximadamente de 62\%
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  En la planta envasadora de Coca-Cola FEMSA ubicada en Tocancipá se
+  realiza el embotellamiento de Coca-Cola presentación de 400ML (en
+  promedio), con una desviacion estandar de 5ML. Si se sabe que por
+  experiencia que este proceso de embotellado sigue una distribucion
+  normal, y tambien se save que todo producto con más de 415 ML es
+  declarado NO CONFORME. Determine el porcentaje de las botellas de
+  gaseosa que son declaradas producto NO CONFORME
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{med }\OtherTok{\textless{}{-}} \DecValTok{400}
+
+\NormalTok{dtsn }\OtherTok{\textless{}{-}} \DecValTok{5}
+
+\NormalTok{resp }\OtherTok{\textless{}{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{415}\NormalTok{,med,dtsn,}\AttributeTok{lower.tail =} \ConstantTok{FALSE}\NormalTok{)}
+
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"El porcentaje de botellas producto NO CONFORME es de: "}\NormalTok{,resp}\SpecialCharTok{*}\DecValTok{100}\NormalTok{,}\StringTok{\textquotesingle{}\%\textquotesingle{}}\NormalTok{));}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "El porcentaje de botellas producto NO CONFORME es de:  0.134989803163009 %"
+\end{verbatim}
+
+\end{document}

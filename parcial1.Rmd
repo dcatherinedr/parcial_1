@@ -1,0 +1,69 @@
+---
+title: "Parcial#1"
+author: "Diana Catherine Davila"
+date: '2022-03-24'
+output: pdf_document
+---
+
+1. La tabla mostrada contiene valores de poblacion, en cientos de miles, de las diez ciudades mas pobladas de cuatros paises en el año 1967:
+
+```{r pressure, echo=FALSE}
+arg <- c( 29.66, 7.61, 6.35,4.10,3.80,2.75,2.70,2.69,2.51, 2.44 )
+
+eeuu <- c( 77.81, 35.50, 24.79, 20.02, 16.70, 9.39,9.38,8.76,7.63,7.50 )
+
+hol <- c( 8.68, 7.31, 6.02, 2.64, 1.75, 1.72, 1.51, 1.42, 1.31, 1.29 )
+
+jap <- c( 110.21, 32.14, 18.88, 16.38, 13.37, 11.92, 10.71, 7.80, 7.70, 7.00 )
+```
+
+a.  Construya un box-plot e identifique los puntos extremos ¿ Cuales son las caracteristicas? ¿Hay outliers?
+
+```{r}
+par(mfrow= c(1,1))
+# Grafica bloxpot de argentina 
+boxplot(arg,  col="blue", main = "Poblacion Argentina", xlab = "Poblacion", ylim = c(0,30),  horizontal = TRUE)
+#Grafica bloxport de USA
+boxplot(eeuu,  col="red", main = "Estados Unidos", xlab = "Poblacion", ylim = c(0,80),  horizontal = TRUE)
+#Grafica bloxpot de Holanda
+boxplot(hol,  col="yellow", main = "Poblacion Holanda", xlab = "Poblacion", ylim = c(0,10),  horizontal = TRUE)
+#Grafica bloxpot de Japón
+boxplot(jap,  col="purple", main = "Poblacion Japon", xlab = "Poblacion", ylim = c(0,115),  horizontal = TRUE)
+
+```
+R/: Se puede observar que la grafica que corresponde a Japón, Estados Unidos y Argentina son los unicos que tiene datos atipicos, los cuales son para de 110.21(Japon), 77.81(Estados Unidos), 29.66(Argentina), adicionalmente la grafica de Argentina, Estados Unidos y Holanda tienen una simetria positiva y la grafica de Japon es la unica que tiene una simetria normal. 
+
+b. Compare los centros de cada población, sus dispersiones y su simetria. ¿ Cuales son las caracteristicas más sobresalientes? ¿ Hay outliers?
+
+R/: la grafica de japon es la unica que tiene una simetria normal, los datos son centrados y solo tiene un outlier de 110,21
+
+la grafica de Argentina tiene una simetria positiva, su centro esta a 25%, tiene un solo dato atipico que es de 29.66
+
+La grafica de Holanda tiene una simetria positiva, es la que tiene la caja más grande este nos indica que tiene datos muy alejados su centro esta aproximadamente a un 30% y no posee datos atipicos.
+
+La grafica de Estados Unidos tiene una simetria positiva, tiene su centro a un 35%, tiene un dato atipico de 77.81
+
+
+2. Avianca se encuentra estudiando la situacion de venta de puesto en el vuelo Armmenia - Bogota puesto que ha identificado que el 2% de las personas que reservaron puesto, no se presentan a la hora del embarque. Teniendo en cuenta que el avion A320 utilizado en esta ruta tiene una capacidad para 189 pasajeros, la empresa decide vender 181 tiquetes. ¿Cual es la probabilidad de que todas las personas que llegan a embarque puedan tener su silla asegurada y no se presenten quejar por "sobre-vender" sillas ante la aeronautica civil? Asuma que las llegadas de los pasajerons siguen una distribucion Poisson.
+
+```{r}
+lambda <-180 * 0.98
+ppois(180, lambda = lambda, lower.tail = TRUE)
+
+```
+R/: La probabilidad de que todas las personas que llegan a embarque y puedan tener su silla asegurada y no presenten quejas por sobre-vender sillas ante la aeronautica civil es de aproximadamente de 62% 
+
+
+3. En la planta envasadora de Coca-Cola FEMSA ubicada en Tocancipá se realiza el embotellamiento de Coca-Cola presentación de 400ML (en promedio), con una desviacion estandar de 5ML. Si se sabe que por experiencia que este proceso de embotellado sigue una distribucion normal, y tambien se save que todo producto con más de 415 ML es declarado NO CONFORME. Determine el porcentaje de las botellas de gaseosa que son declaradas producto NO CONFORME
+
+```{r}
+
+med <- 400
+
+dtsn <- 5
+
+resp <- pnorm(415,med,dtsn,lower.tail = FALSE)
+
+print(paste("El porcentaje de botellas producto NO CONFORME es de: ",resp*100,'%'));
+
+```
